@@ -4,7 +4,7 @@
 # 项目初始化（安装项目依赖）
 npm install
 
-# 启动服务，服务URL：localhost:8080
+# 启动服务，服务URL：localhost:8000
 npm run start
 
 # 打包生产代码
