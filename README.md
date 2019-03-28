@@ -1,5 +1,7 @@
 # Blogic系统前端
 
+#搭建 webpack4 + react + router4 + antd + fetch
+
 ``` bash
 # 项目初始化（安装项目依赖）
 npm install

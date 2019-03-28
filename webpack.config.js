@@ -76,33 +76,41 @@ module.exports = {
                     loader: 'babel-loader',
                 }
             },
-            {
-                test: /\.scss$/,
-                use: [{
-                    loader: "style-loader" // 将 JS 字符串生成为 style 节点
-                }, {
-                    loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-                }, {
-                    loader: "sass-loader" // 将 Sass 编译成 CSS
-                }]
-            },
+            // {
+            //     test: /\.scss$/,
+            //     use: [{
+            //         loader: "style-loader" // 将 JS 字符串生成为 style 节点
+            //     }, {
+            //         loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+            //     }, {
+            //         loader: "sass-loader" // 将 Sass 编译成 CSS
+            //     }]
+            // },
             {   //使用css配置
                 test: /\.css$/,
                 loader:"style-loader!css-loader"
             },
+            // {
+            //     //使用less配置
+            //     test: /\.less$/,
+            //     loader: "style-loader!css-loader"
+            // },
             {
-                //使用less配置
-                test: /\.less$/,
-                loader: "style-loader!css-loader"
-            },
-            {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192,
-                            name: 'img/[name]_[hash].[ext]',//所有图片在一个目录
+                            limit: 1000,
+                            name: 'imgs/[name]_[hash:5].[ext]',//所有图片在一个目录
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader', //图片压缩,超过1000KB时
+                        options: {
+                            bypassOnDebug: true, // webpack@1.x        
+                            disable: true, // webpack@2.x and newer 
+                            //name: 'imgs/[name]_[hash:5].[ext]',//所有图片在一个目录
                         }
                     }
                 ]

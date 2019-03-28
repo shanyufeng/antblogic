@@ -16,6 +16,7 @@ render() {
     <Layout className="layout">
       <Content style={{ margin: '24px 16px' }}>
         <Card type="inner" title="搭建介绍">
+          <div className="imgshow"></div>
           1.npm install webpack webpack-cli webpack-dev-server -g 
           <br />
             <Text code>-g全局安装,运行时会用到webpack命令</Text> <br />
